@@ -59,7 +59,7 @@ You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is, open
  To install them type in the terminal:
  
   ```
-  sudo apt-get install libpam0g:i386 && sudo apt-get install libx11-6:i386 && sudo apt-get install libstdc++6:i386 && sudo apt-get install libstdc++5:i386 && sudo apt-get install libnss3-tools && sudo apt install xterm
+  sudo apt-get install libpam0g:i386 && sudo apt-get install libx11-6:i386 && sudo apt-get install libstdc++6:i386 && sudo apt-get install libstdc++5:i386 && sudo apt-get install libnss3-tools && sudo apt install xterm && sudo apt-get install openssl 	
   ```
 
 ### SSL network extender
