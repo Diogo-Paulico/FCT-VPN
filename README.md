@@ -41,7 +41,7 @@ You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is, open
 
  ### Firefox
 
- To check if you have firefox installed either look for it in the applications menu or type in terminal:
+ To check if you have Firefox installed either look for it in the applications menu or type in terminal:
 
  ```
   firefox
@@ -70,7 +70,7 @@ Afterwards reboot your computer or VM.
 
 ## Finishing setup
 
- * Open firefox and go to https://vpn.fct.unl.pt/  
+ * Open Firefox and go to https://vpn.fct.unl.pt/  
  * Sign-in using your CLIP credentials
  * You should see a window like this ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/1VPN.png)
  * Press <kbd>Connect</kbd>
@@ -81,13 +81,13 @@ Afterwards reboot your computer or VM.
     ```
      cd ~/(location where it was saved (ie. Documents, Downloads, Desktop)) && sudo bash ./cshell_install.sh
     ```
- * Close firefox all firefox windows when it asks
- * Once it finishes installing you can close the terminal and open firefox
+ * Close all Firefox windows when it asks
+ * Once it finishes installing you can close the terminal and open Firefox
  * Go to https://localhost:14186/id/
  * You should see this ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/3VPN.png)
  * Press Advanced > Accept the risk and proceed
  * You should see a random string of digits.
- * Restart firefox and open https://vpn.fct.unl.pt/
+ * Restart Firefox and open https://vpn.fct.unl.pt/
  * Login and press connect, you should now be connected. 
  * Attempt to access Mooshak:
     http://mooshak.di.fct.unl.pt/~mooshak/
