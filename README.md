@@ -89,9 +89,11 @@ Afterwards reboot your computer or VM.
  * Go to https://localhost:14186/id/
  * You should see this ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/3VPN.png)
  * Press Advanced > Accept the risk and proceed
- * You should see a random string of digits.
+ * You should see a random string of digits, meaning it is working as intended.
  * Restart Firefox and open https://vpn.fct.unl.pt/
- * Login and press connect, you should now be connected. 
+ * Login and press connect
+ * Press <kbd>Trust</kbd> in the window that pops up, and <kbd>Yes</kbd> in the next one
+ * You should now be connected. 
  * Attempt to access Mooshak:
     http://mooshak.di.fct.unl.pt/~mooshak/
     OR
