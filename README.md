@@ -64,8 +64,8 @@ You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is, open
 
 ### SSL network extender
  Download it from the vpn's website: https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh
- Save it in an easy to reach location (ie. Desktop, Documents, Downloads)
- Open a terminal window and type:
+ \ Save it in an easy to reach location (ie. Desktop, Documents, Downloads)
+ \ Open a terminal window and type:
  ```
   cd ~/(location where it was saved (ie. Documents, Downloads, Desktop)) && sudo bash ./snx_install.sh
 ```
