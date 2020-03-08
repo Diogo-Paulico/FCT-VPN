@@ -72,9 +72,9 @@ Afterwards reboot your computer or VM.
 
  * Open firefox and go to https://vpn.fct.unl.pt/  
  * Sign-in using your CLIP credentials
- * You should see a window like this ...add image...
+ * You should see a window like this ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/1VPN.png)
  * Press <kbd>Connect</kbd>
- * A window like this should pop up ...image...
+ * A window like this should pop up ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/2VPN.png)
  * Press "Click here to download the Mobile Access Portal Agent."
  * Save it in an easy to reach location (ie. Desktop, Documents, Downloads)
  * Open a terminal window and type:
@@ -84,7 +84,7 @@ Afterwards reboot your computer or VM.
  * Close firefox all firefox windows when it asks
  * Once it finishes installing you can close the terminal and open firefox
  * Go to https://localhost:14186/id/
- * You should see this ...image...
+ * You should see this ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/3VPN.png)
  * Press Advanced > Accept the risk and proceed
  * You should see a random string of digits.
  * Restart firefox and open https://vpn.fct.unl.pt/
