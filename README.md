@@ -1,6 +1,9 @@
 # VPN FCT - Linux
 This guide intends to allow the use of FCT's VPN on Linux
-Currently this guide only works for Ubuntu (or Lubuntu, Kubuntu, Xubuntu) and was only seen working on Firefox
+
+## Compatihbility
+ * Tested and working on Ubuntu 19.10 with Firefox 73 installed
+ * Should work for all Ubuntu distros (Ubuntu, Kubuntu, Lubuntu, Xubuntu, Pop Os!, Elementary OS, Linux Mint, ...)
 
 ## Prerequisites
 
