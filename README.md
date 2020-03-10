@@ -2,7 +2,8 @@
 This guide intends to allow the use of FCT's VPN on Linux
 
 ## Compatibility
- * Tested and working on Ubuntu 19.10 with Firefox 73 installed
+ * Tested and working on Ubuntu 16.04 x64 LTS with Firefox 45 installed
+ * Tested and working on Ubuntu 19.10 x64 with Firefox 73 installed
  * Should work for all Ubuntu distros (Ubuntu, Kubuntu, Lubuntu, Xubuntu, Pop Os!, Elementary OS, Linux Mint, ...)
 
 ## Prerequisites
@@ -59,7 +60,7 @@ You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is, open
  To install them type in the terminal:
  
   ```
-  sudo apt-get install libpam0g:i386 && sudo apt-get install libx11-6:i386 && sudo apt-get install libstdc++6:i386 && sudo apt-get install libstdc++5:i386 && sudo apt-get install libnss3-tools && sudo apt install xterm && sudo apt-get install openssl 	
+  sudo apt-get install libpam0g:i386 libx11-6:i386 libstdc++6:i386 libstdc++5:i386 libnss3-tools xterm openssl 	
   ```
 
 ### SSL network extender
