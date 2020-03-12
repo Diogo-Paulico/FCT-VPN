@@ -2,7 +2,8 @@
 This guide intends to allow the use of FCT's VPN on Linux
 
 ## Compatibility
- * Tested and working on Ubuntu 16.04 (32 & 64 bits) LTS with Firefox 45 installed
+ * Tested and working on Ubuntu 16.04 LTS (32 & 64 bits) with Firefox 45 installed
+ * Tested and working on Ubuntu 18.04 LTS (64 bits) with Firefox 72 installed
  * Tested and working on Ubuntu 19.10 (64 bits) with Firefox 73 installed
  * Should work for all Ubuntu distros (Ubuntu, Kubuntu, Lubuntu, Xubuntu, Pop Os!, Elementary OS, Linux Mint, ...)
 
