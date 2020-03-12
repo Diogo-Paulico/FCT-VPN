@@ -14,7 +14,12 @@ select yn in "Yes" "No"; do
 done 
 clear
  apt -qq install libpam0g:i386 libx11-6:i386 libstdc++6:i386 libstdc++5:i386 libnss3-tools xterm openssl -y
+ echo "Firefox will open and close, it's normal"
+ sleep 3
  clear
+ firefox
+ sleep 3
+ pkill firefox
  mkdir vpnInstaller
  cd ./vpnInstaller
  wget -q https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cshell_install.sh --no-check-certificate
