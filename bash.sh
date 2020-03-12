@@ -5,7 +5,7 @@ else
     apt -qq install default-jre -y
 fi
 clear
-echo "Do you have Firefox installed?"
+echo "Do you have Firefox installed? Select number and press Enter"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) break;;
@@ -20,7 +20,10 @@ clear
  wget -q https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cshell_install.sh --no-check-certificate
  wget -q https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh --no-check-certificate
  bash ./snx_install.sh
+ read -p "After rebooting the computer, follow the remaining steps to finish the setup. Press enter to reboot your computer."
  bash ./cshell_install.sh
+ read -p "After rebooting the computer, follow the remaining steps to finish the setup. Press enter to reboot your computer."
+ cd ..
  rm -r vpnInstaller
  clear
  read -p "After rebooting the computer, follow the remaining steps to finish the setup. Press enter to reboot your computer."
