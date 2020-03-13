@@ -1,13 +1,48 @@
 # VPN FCT - Linux
 This guide intends to allow the use of FCT's VPN on Linux
 
+# Table of Contents
+1. [Compatibility]()
+2. [VMs]()
+3. [Script Installation](#example)
+4. [Manual Installation](#example2)
+5. [Normal Access](#third-example)
+6. [Known issues](#fourth-examplehttpwwwfourthexamplecom)
+
 ## Compatibility
  * Tested and working on Ubuntu 16.04 LTS (32 & 64 bits) with Firefox 45 installed
  * Tested and working on Ubuntu 18.04 LTS (64 bits) with Firefox 72 installed
  * Tested and working on Ubuntu 19.10 (64 bits) with Firefox 73 installed
  * Should work for all Ubuntu distros (Ubuntu, Kubuntu, Lubuntu, Xubuntu, Pop Os!, Elementary OS, Linux Mint, ...)
 
-## Prerequisites
+## VMs
+ * Virtual machine with gcc and java installed (Lubuntu 18.04 32 bits) :
+ * Virtual machine with Eclipse and OCaml installed (Lubuntu 18.04 64 bits): 
+
+
+## Script Installation
+ Download this script: and save it in an easy to reach location (ie. Desktop, Documents, Downloads), then open a terminal window (press <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>T</kbd> or search for it in the application menu) and type:
+
+    ```
+     cd ~/(location where it was saved (ie. Documents, Downloads, Desktop)) && sudo bash ./vpn_install.sh
+    ```
+  Follow the instructions on-screen until asked to consult this guide again.
+
+ ### Step 2: During installation
+  * Open firefox
+  * Go to https://vpn.fct.unl.pt/
+  * You should see this ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/3VPN.png)
+  * Press Advanced > Accept the risk and proceed
+  * Return to the installation window and press Enter
+
+ ### Step 3: During installation
+  * Open firefox
+  * Go to https://vpn.fct.unl.pt/
+  * Log in using your CLIP credentials
+  * Accept pop-ups from this website
+  * When a new window pops up, return to the installastion window, press Enter and follow the instructions presented
+
+## Manual Installation
 
 ### Java
 
