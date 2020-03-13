@@ -1,3 +1,4 @@
+clear
 echo "If you have run this setup before and the computer was reset press 2 and enter, otherwise press 1 and enter"
 select yn in "FirstInstall" "ContinueInstall"; do
     case $yn in
@@ -26,11 +27,13 @@ clear
   read -p "Refer to the instruction guide (step2). After accepting security exception press Enter"
  wget -q https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh --no-check-certificate
  bash ./snx_install.sh;
+ clear;
  read -p "After rebooting the computer, reopen the setup file and select number 2"
  reboot -f
         break;;
 ContinueInstall ) 
         cd ./vpnInstaller
+        clear;
         read -p "Refer to the instruction guide (step3), after doing the steps there mentioned, press Enter to continue"
         wget -q https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cshell_install.sh --no-check-certificate
         bash ./cshell_install.sh;
