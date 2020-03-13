@@ -22,6 +22,7 @@ clear
  apt -qq install libpam0g:i386 libx11-6:i386 libstdc++6:i386 libstdc++5:i386 libnss3-tools xterm openssl -y
  mkdir vpnInstaller
  cd ./vpnInstaller
+ clear
   read -p "Refer to the instruction guide (step2). After accepting security exception press Enter"
  wget -q https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh --no-check-certificate
  bash ./snx_install.sh;
