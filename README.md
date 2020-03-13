@@ -1,5 +1,5 @@
 # VPN FCT - Linux
-This guide intends to allow the use of FCT's VPN on Linux
+This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them in the issues tab
 
 # Index
 1. [Compatibility](#compatibility)
