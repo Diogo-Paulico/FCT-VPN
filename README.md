@@ -45,6 +45,11 @@ These VMs contain the VPN already installed, the website is bookmarked on firefo
 
 You can delete the installation file after the computer reboots.
 
+ * You should now be able to access Mooshak:
+    http://mooshak.di.fct.unl.pt/~mooshak/
+    OR
+    http://193.136.122.90/~mooshak/
+
 ## Manual Installation
 
 ### Java
@@ -142,7 +147,7 @@ Afterwards reboot your computer or VM.
    The first one should take a while, it's normal.
 
 ## Normal access:
- After all these steps are done all you have to do to use it on a daily basis is access the VPN's website, login, click connect and you should be able to acess Mooshak from outside the FCT
+ After all these steps are done all you have to do to use it on a daily basis is access the VPN's website, login, click connect and you should be able to access Mooshak from outside the FCT
 
  ## Known issues:
-  * Can only acess Mooshak, none other of the FCT's websites seem to work
+  * Can only access Mooshak, none other of the FCT's websites seem to work
