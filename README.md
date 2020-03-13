@@ -17,8 +17,8 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
 
 ## VMs
 These VMs contain the VPN already installed, the website is bookmarked on firefox
- * Virtual machine with gcc and java installed (Lubuntu 18.04 32 bits) :
- * Virtual machine with Eclipse and OCaml installed (Lubuntu 18.04 64 bits): 
+ * Virtual machine with gcc and java installed (Lubuntu 18.04 32 bits) : https://drive.google.com/file/d/1Hu9sg8IwZ9ZX_jeraHorOeNilWPwPXq6/view?usp=sharing
+ * Virtual machine with Eclipse and OCaml installed (Lubuntu 18.04 64 bits): https://drive.google.com/file/d/1BunnK3Sk6bq4ATfK613Z4AArjQ__uObr/view?usp=sharing
 
 
 ## Script Installation
