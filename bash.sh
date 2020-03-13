@@ -1,4 +1,9 @@
-if [[ $(which java) ]]; then
+
+echo "If you have run this setup before and the computer was reset press 2 and enter, otherwise press 1 and enter"
+select yn in "FirstInstall" "ContinueInstall"; do
+    case $yn in
+        FirstInstall )
+        if [[ $(which java) ]]; then
     echo "Java is installed"
 else
     apt -qq update
@@ -13,23 +18,25 @@ select yn in "Yes" "No"; do
     esac
 done 
 clear
+ apt upgrade -y
  apt -qq install libpam0g:i386 libx11-6:i386 libstdc++6:i386 libstdc++5:i386 libnss3-tools xterm openssl -y
- echo "Firefox will open and close, it's normal"
- sleep 3
- clear
- firefox
- sleep 3
- pkill firefox
  mkdir vpnInstaller
  cd ./vpnInstaller
  wget -q https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cshell_install.sh --no-check-certificate
  wget -q https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh --no-check-certificate
- bash ./snx_install.sh
- read -p "After rebooting the computer, follow the remaining steps to finish the setup. Press enter to reboot your computer."
- bash ./cshell_install.sh
- read -p "After rebooting the computer, follow the remaining steps to finish the setup. Press enter to reboot your computer."
- cd ..
- rm -r vpnInstaller
- clear
- read -p "After rebooting the computer, follow the remaining steps to finish the setup. Press enter to reboot your computer."
- shutdown -r now
+ read -p "After rebooting the computer, reopen the setup file and select number 2"
+ reboot -f
+        break;;
+ContinueInstall ) 
+        cd ./vpnInstaller
+         bash ./snx_install.sh;
+        bash ./cshell_install.sh;
+        sleep 3;
+        cd ..;
+        rm -r vpnInstaller;
+        clear;
+        read -p "After rebooting the computer, follow the remaining steps to finish the setup. Press enter to reboot your computer.";
+        shutdown -r now; 
+         break;;
+    esac
+done 
