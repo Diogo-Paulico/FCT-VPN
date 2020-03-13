@@ -41,7 +41,7 @@ These VMs contain the VPN already installed, the website is bookmarked on firefo
   * Go to https://vpn.fct.unl.pt/
   * Log in using your CLIP credentials
   * Accept pop-ups from this website
-  * When a new window pops up, return to the installastion window, press Enter and follow the instructions presented
+  * When a new window pops up, return to the installation window, press Enter and follow the instructions presented
 
 You can delete the installation file after the computer reboots.
 
