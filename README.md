@@ -1,13 +1,16 @@
 # VPN FCT - Linux
 This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them in the issues tab
 
+
 # Index
 1. [Compatibility](#compatibility)
 2. [VMs](#vms)
 3. [Auto Installation](#auto-installation)
 4. [Manual Installation](#manual-installation)
-5. [Normal Access](#normal-access)
-6. [Known issues](#known-issues)
+5. [Arch Installation](#arch-install) 
+6. [Normal Access](#normal-access)
+7. [Uninstallation](#uninstallation)
+8. [Known issues](#known-issues)
 
 ## Compatibility
  * Tested and working on Ubuntu 16.04 LTS (32 & 64 bits) with Firefox 45 installed
@@ -15,7 +18,7 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
  * Tested and working on Ubuntu 19.10 (64 bits) with Firefox 73 installed
  * Should work for all Ubuntu distros (Ubuntu, Kubuntu, Lubuntu, Xubuntu, Pop Os!, Elementary OS, Linux Mint, ...)
 
-## VMs
+## VMs 
 These VMs contain the VPN already installed, the website is bookmarked on firefox
  * Virtual machine with gcc and java installed (Lubuntu 18.04 32 bits) : https://drive.google.com/file/d/1Hu9sg8IwZ9ZX_jeraHorOeNilWPwPXq6/view?usp=sharing
  * Virtual machine with Eclipse and OCaml installed (Lubuntu 18.04 64 bits): https://drive.google.com/file/d/1BunnK3Sk6bq4ATfK613Z4AArjQ__uObr/view?usp=sharing
@@ -29,7 +32,7 @@ These VMs contain the VPN already installed, the website is bookmarked on firefo
  ```
   Follow the instructions on-screen until asked to consult this guide again.
 
- ### Step 2: During installation
+ ### Step 2: During installation 
   * Open firefox
   * Go to https://vpn.fct.unl.pt/
   * You should see this ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/3VPN.png)
@@ -152,8 +155,12 @@ Afterwards reboot your computer or VM.
    
    The first one should take a while, it's normal.
 
+## Arch Install:
+ 
 ## Normal access:
  After all these steps are done all you have to do to use it on a daily basis is access the VPN's website, login, click connect and you should be able to access Mooshak from outside the FCT
+
+ ## Uninstallation:
 
  ## Known issues:
   * Can only access Mooshak, none other of the FCT's websites seem to work
