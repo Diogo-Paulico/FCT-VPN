@@ -30,8 +30,10 @@ clear
         break;;
 ContinueInstall ) 
         cd ./vpnInstaller
-        echo "Refer to the instruction guide (step3), after doing the steps there mentioned, press Enter to continue"
+        read -p "Refer to the instruction guide (step3), after doing the steps there mentioned, press Enter to continue"
+        wget -q https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cshell_install.sh --no-check-certificate
         bash ./cshell_install.sh;
+        sleep 3;
         cd ..;
         rm -r vpnInstaller;
         clear;
