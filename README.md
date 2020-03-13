@@ -1,13 +1,13 @@
 # VPN FCT - Linux
 This guide intends to allow the use of FCT's VPN on Linux
 
-# Table of Contents
-1. [Compatibility]()
-2. [VMs]()
-3. [Script Installation](#example)
-4. [Manual Installation](#example2)
-5. [Normal Access](#third-example)
-6. [Known issues](#fourth-examplehttpwwwfourthexamplecom)
+# Index
+1. [Compatibility](#compatibility)
+2. [VMs](#vms)
+3. [Script Installation](#script-installation)
+4. [Manual Installation](#manual-installation)
+5. [Normal Access](#normal-access)
+6. [Known issues](#known-issues)
 
 ## Compatibility
  * Tested and working on Ubuntu 16.04 LTS (32 & 64 bits) with Firefox 45 installed
@@ -23,9 +23,9 @@ This guide intends to allow the use of FCT's VPN on Linux
 ## Script Installation
  Download this script: and save it in an easy to reach location (ie. Desktop, Documents, Downloads), then open a terminal window (press <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>T</kbd> or search for it in the application menu) and type:
 
-    ```
+ ```
      cd ~/(location where it was saved (ie. Documents, Downloads, Desktop)) && sudo bash ./vpn_install.sh
-    ```
+ ```
   Follow the instructions on-screen until asked to consult this guide again.
 
  ### Step 2: During installation
