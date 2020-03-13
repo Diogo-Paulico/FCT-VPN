@@ -4,7 +4,7 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
 # Index
 1. [Compatibility](#compatibility)
 2. [VMs](#vms)
-3. [Script Installation](#script-installation)
+3. [Auto Installation](#auto-installation)
 4. [Manual Installation](#manual-installation)
 5. [Normal Access](#normal-access)
 6. [Known issues](#known-issues)
@@ -21,7 +21,7 @@ These VMs contain the VPN already installed, the website is bookmarked on firefo
  * Virtual machine with Eclipse and OCaml installed (Lubuntu 18.04 64 bits): https://drive.google.com/file/d/1BunnK3Sk6bq4ATfK613Z4AArjQ__uObr/view?usp=sharing
 
 
-## Script Installation
+## Auto Installation
  Download this script: https://drive.google.com/file/d/13cZTdzsjyqSW3h8y9vDaKCa3pdXYppo4/view?usp=sharing and save it in an easy to reach location (ie. Desktop, Documents, Downloads), then open a terminal window (press <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>T</kbd> or search for it in the application menu) and type:
 
  ```
