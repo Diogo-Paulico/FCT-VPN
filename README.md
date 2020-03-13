@@ -45,7 +45,13 @@ These VMs contain the VPN already installed, the website is bookmarked on firefo
 
 You can delete the installation file after the computer reboots.
 
- * You should now be able to access Mooshak:
+### After restarting
+
+ * Open Firefox and open https://vpn.fct.unl.pt/
+ * Login and press connect
+ * Press <kbd>Trust</kbd> in the window that pops up, and <kbd>Yes</kbd> in the next one
+ * You should now be connected. 
+ * Attempt to access Mooshak:
     http://mooshak.di.fct.unl.pt/~mooshak/
     OR
     http://193.136.122.90/~mooshak/
