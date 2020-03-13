@@ -28,7 +28,7 @@ clear
  wget -q https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh --no-check-certificate
  bash ./snx_install.sh;
  clear;
- read -p "After rebooting the computer, reopen the setup file and select number 2"
+ read -p "After rebooting the computer, reopen the setup file and select number 2. Press enter to reboot."
  reboot -f
         break;;
 ContinueInstall ) 
