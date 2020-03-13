@@ -16,6 +16,7 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
  * Should work for all Ubuntu distros (Ubuntu, Kubuntu, Lubuntu, Xubuntu, Pop Os!, Elementary OS, Linux Mint, ...)
 
 ## VMs
+These VMs contain the VPN already installed, the website is bookmarked on firefox
  * Virtual machine with gcc and java installed (Lubuntu 18.04 32 bits) :
  * Virtual machine with Eclipse and OCaml installed (Lubuntu 18.04 64 bits): 
 
