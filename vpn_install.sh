@@ -1,3 +1,5 @@
+#!/bin/bash
+
 clear
 echo "If you have run this setup before and the computer was reset press 2 and enter, otherwise press 1 and enter"
 select yn in "FirstInstall" "ContinueInstall"; do
