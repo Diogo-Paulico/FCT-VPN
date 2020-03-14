@@ -1,6 +1,5 @@
 # VPN FCT - Linux
-This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them in the issues tab
-THANKS: to Miguel, Duda, João and Tiago for early testing of the install and VMs;to João Arvana for making the install process easier, and optimizing this guide;
+This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them in the issues tab <br/>THANKS: to Miguel, Duda, João and Tiago for early testing of the install and VMs;to João Arvana for making the install process easier, and optimizing this guide;
 
 
 # Index
