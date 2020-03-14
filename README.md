@@ -26,7 +26,7 @@ These VMs contain the VPN already installed, the website is bookmarked on firefo
 
 
 ## Auto Installation
-  Open a terminal window (press CTRL+ALT+T or search for it in the application menu) and type:
+  Open a terminal window and run the following command:
 
   ``` 
   wget -O vpn_install.sh https://raw.githubusercontent.com/Diogo-Paulico/FCT-VPN/master/vpn_install.sh && chmod -v +x ./vpn_install.sh && sudo ./vpn_install.sh
