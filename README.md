@@ -16,6 +16,7 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
  * Tested and working on Ubuntu 16.04 LTS (32 & 64 bits) with Firefox 45 installed
  * Tested and working on Ubuntu 18.04 LTS (64 bits) with Firefox 72 installed
  * Tested and working on Ubuntu 19.10 (64 bits) with Firefox 73 installed
+ * Tested and working on Pop!_OS 19.10 (64 bits) with Chrome 80 installed
  * Should work for all Ubuntu distros (Ubuntu, Kubuntu, Lubuntu, Xubuntu, Pop Os!, Elementary OS, Linux Mint, ...)
 
 ## VMs 
@@ -25,11 +26,12 @@ These VMs contain the VPN already installed, the website is bookmarked on firefo
 
 
 ## Auto Installation
- Download this script: https://drive.google.com/file/d/13cZTdzsjyqSW3h8y9vDaKCa3pdXYppo4/view?usp=sharing and save it in an easy to reach location (ie. Desktop, Documents, Downloads), then open a terminal window (press <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>T</kbd> or search for it in the application menu) and type:
+  Open a terminal window and run the following command:
 
- ```
-     cd ~/(location where it was saved (ie. Documents, Downloads, Desktop)) && sudo bash ./vpn_install.sh
- ```
+  ``` 
+  wget -O vpn_install.sh https://raw.githubusercontent.com/Diogo-Paulico/FCT-VPN/master/vpn_install.sh && chmod -v +x ./vpn_install.sh && sudo ./vpn_install.sh
+  ```
+
   Follow the instructions on-screen until asked to consult this guide again.
 
  ### Step 2: During installation 
