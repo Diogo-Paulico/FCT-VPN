@@ -27,6 +27,7 @@ These VMs contain the VPN already installed, you need Virtual Box to use these, 
 
 
 ## Auto Installation (For Ubuntu based distros)
+  Massive thanks to João Arvana for greatly improving this installer and guide.
   Open a terminal window and run the following command:
 
   ``` 
