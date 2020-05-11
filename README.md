@@ -37,7 +37,7 @@ These VMs contain the VPN already installed, the website is bookmarked on firefo
   When you return here follow the Manual Installation from the ["Accepting the SSL certificates"](#accepting-the-ssl-certificates) section onward.
 
 ## Auto Installation (For Arch based distros)
-Wait? Did you expect an install script for Arch? Aren't y'all so much better than other linux user because you "use arch btw"? If that's the case I think y'all are very capable of figuring out how to install this on your own... (Just follow the manual installation while replacing the package installs with the Arch equivalent commands and package names.)
+Wait? Did you expect an install script for Arch? Aren't y'all so much better than other linux users because you "use arch btw"? If that's the case I think y'all are very capable of figuring out how to install this on your own... (Just follow the manual installation while replacing the package installs with the Arch equivalent commands and package names.)
 
 ## Manual Installation
 To install the vpn we are going to be using the terminal, so keep one open at all times during this install. When told to run a command or type into the terminal, type and execute the given command. The terminal can be acessed through the applications menu.
@@ -77,7 +77,7 @@ You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is run t
   The output should now look like the one presented previously.
 
  ### Firefox
- For some reason you need to have Firefox installed during the VPNs installation even if the browser you intend to use to browse the web is Chrome/Chromium. **Firefox is only required during installation, meaning you can uninstal it rigth after we are done.** To check if it is installed you can either look for it in the applications menu or type in terminal:
+ For some reason you need to have Firefox installed during the VPNs installation even if the browser you intend to use to browse the web is Chrome/Chromium. **Firefox is only required during installation, meaning you can uninstall it right after we are done.** To check if it is installed you can either look for it in the applications menu or type in terminal:
 
  ```
   firefox
@@ -127,7 +127,10 @@ Download it from the vpn's website: https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cs
 ### Accepting the SSL certificates
 For you to be able to use the VPN you are going to have to accept two SSL certificates, one for localhost (your machine), and another one for the VPN server. Do this on the browser you intend to use to connect to the VPN, normally this would be the browser you use normally.
 
-#### Firefox
+1. [SSL on Firefox](#ssl-on-firefox)
+2. [SSL on Chrome/Chromium](#ssl-on-chrome/chromium)
+
+#### SSL on Firefox
 * Go to https://localhost:14186/id/
 * You should see this ![firefox ssl accept screen](images/firefoxLocalhost0.png)
 * Now press where the red arrows point to
@@ -138,7 +141,7 @@ For you to be able to use the VPN you are going to have to accept two SSL certif
 * Now repeat the same steps but on https://vpn.fct.unl.pt/ 
 * You should see this screen if successful ![vpn login screen](images/firefoxVPN.png)
 
-#### Chrome/Chromium
+#### SSL on Chrome/Chromium
 * Go to https://localhost:14186/id/
 * You should see this ![chromium ssl accept screen](images/chromiumLocalhost0.png)
 * Now press where the red arrows point to
@@ -158,7 +161,7 @@ For you to be able to use the VPN you are going to have to accept two SSL certif
 * Now reload the page and this window should popup ![vpn connect popup](images/vpnConnectPopup.png)
 * If it doesn't just click connect on the home page and it should popup ![vpn home connect button](images/vpnHome.png)
 * Next one window should popup, click where the red arrow points, when you do the next window will popup, do the same on that one ![vpn accept 1](images/vpnAccept1.png) ![vpn accept 2](images/vpnAccept2.png)
-* The first window that poped up should now look like this ![vpn connect popup when connected](images/vpnConnectPopupConnected.png)
+* The first window that popped up should now look like this ![vpn connect popup when connected](images/vpnConnectPopupConnected.png)
 
 **GOOD JOB YOU'RE NOW CONNECTED**
 
@@ -171,7 +174,7 @@ You can now attempt to access Mooshak:
   * Open your browser and go to https://vpn.fct.unl.pt/
   * Sign-in using your CLIP credentials
   * Wait for the popup, or click <kbd>Connect</kbd> to make it open if it doesn't show up on it's own.
-  * Wait for the connection to be established and the wait for Status to change to connected.
+  * Wait for the connection to be established and for Status to change to connected.
 * Disconnecting
   * Either click <kbd>Disconnect</kbd> on the home page (the button that is now where <kbd>Connect</kbd> used to be), or click <kbd>Disconnect</kbd> on the popup. Closing the popup also works.
 
