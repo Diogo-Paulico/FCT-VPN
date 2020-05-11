@@ -128,7 +128,7 @@ Download it from the vpn's website: https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cs
 For you to be able to use the VPN you are going to have to accept two SSL certificates, one for localhost (your machine), and another one for the VPN server. Do this on the browser you intend to use to connect to the VPN, normally this would be the browser you use normally.
 
 1. [SSL on Firefox](#ssl-on-firefox)
-2. [SSL on Chrome/Chromium](#ssl-on-chrome/chromium)
+2. [SSL on Chrome or Chromium](#ssl-on-chrome-or-chromium)
 
 #### SSL on Firefox
 * Go to https://localhost:14186/id/
@@ -141,7 +141,7 @@ For you to be able to use the VPN you are going to have to accept two SSL certif
 * Now repeat the same steps but on https://vpn.fct.unl.pt/ 
 * You should see this screen if successful ![vpn login screen](images/firefoxVPN.png)
 
-#### SSL on Chrome/Chromium
+#### SSL on Chrome or Chromium
 * Go to https://localhost:14186/id/
 * You should see this ![chromium ssl accept screen](images/chromiumLocalhost0.png)
 * Now press where the red arrows point to
