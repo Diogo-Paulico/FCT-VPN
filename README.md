@@ -5,9 +5,9 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
 # Index
 1. [Compatibility](#compatibility)
 2. [VMs](#vms)
-3. [Auto Installation](#auto-installation)
-4. [Manual Installation](#manual-installation)
-5. [Arch Installation](#arch-install) 
+3. [Auto Installation (For Ubuntu based distros)](#auto-installation-for-ubuntu-based-distros)
+4. [Auto Installation (For Arch based distros)](#auto-installation-for-arch-based-distros) 
+5. [Manual Installation](#manual-installation)
 6. [Normal Access](#normal-access)
 7. [Uninstallation](#uninstallation)
 8. [Known issues](#known-issues)
@@ -20,12 +20,14 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
  * Should work for all Ubuntu distros (Ubuntu, Kubuntu, Lubuntu, Xubuntu, Pop Os!, Elementary OS, Linux Mint, ...)
 
 ## VMs 
-These VMs contain the VPN already installed, the website is bookmarked on firefox
+These VMs contain the VPN already installed, you need Virtual Box to use these, the website is bookmarked on firefox
  * Virtual machine with gcc and java installed (Lubuntu 18.04 32 bits) : https://drive.google.com/file/d/1Hu9sg8IwZ9ZX_jeraHorOeNilWPwPXq6/view?usp=sharing
  * Virtual machine with Eclipse and OCaml installed (Lubuntu 18.04 64 bits): https://drive.google.com/file/d/1BunnK3Sk6bq4ATfK613Z4AArjQ__uObr/view?usp=sharing
+ * Virtual machine with Eclipse (Java, C and OCaml) and Visual Studio Code (C) (Lubuntu 18.04 64 bits): https://drive.google.com/file/d/1DkaKP6RnlobPsvSvDfs04h2bTx5lzKZH/view?usp=sharing
 
 
-## Auto Installation
+## Auto Installation (For Ubuntu based distros)
+  Massive thanks to João Arvana for greatly improving this installer and guide.</br>
   Open a terminal window and run the following command:
 
   ``` 
@@ -34,38 +36,16 @@ These VMs contain the VPN already installed, the website is bookmarked on firefo
 
   Follow the instructions on-screen until asked to consult this guide again.
 
- ### Step 2: During installation 
-  * Open firefox
-  * Go to https://vpn.fct.unl.pt/
-  * You should see this ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/3VPN.png)
-  * Press Advanced > Accept the risk and proceed
-  * Return to the installation window and press Enter
+  When you return here follow the Manual Installation from the ["Accepting the SSL certificates"](#accepting-the-ssl-certificates) section onward.
 
- ### Step 3: During installation
-  * Open firefox
-  * Go to https://vpn.fct.unl.pt/
-  * Log in using your CLIP credentials
-  * Accept pop-ups from this website
-  * When a new window pops up, return to the installation window, press Enter and follow the instructions presented
-
-You can delete the installation file after the computer reboots.
-
-### After restarting
-
- * Open Firefox and open https://vpn.fct.unl.pt/
- * Login and press connect
- * Press <kbd>Trust</kbd> in the window that pops up, and <kbd>Yes</kbd> in the next one
- * You should now be connected. 
- * Attempt to access Mooshak:
-    http://mooshak.di.fct.unl.pt/~mooshak/
-    OR
-    http://193.136.122.90/~mooshak/
+## Auto Installation (For Arch based distros)
+Currently Unavailable
 
 ## Manual Installation
+To install the vpn we are going to be using the terminal, so keep one open at all times during this install. When told to run a command or type into the terminal, type and execute the given command. The terminal can be acessed through the applications menu.
 
 ### Java
-
-You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is, open a terminal window (press <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>T</kbd> or search for it in the application menu) and type
+You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is run the following command:
  ```
   java -version
   ```
@@ -99,8 +79,7 @@ You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is, open
   The output should now look like the one presented previously.
 
  ### Firefox
-
- To check if you have Firefox installed either look for it in the applications menu or type in terminal:
+ For some reason you need to have Firefox installed during the VPNs installation even if the browser you intend to use to browse the web is Chrome/Chromium. **Firefox is only required during installation, meaning you can uninstall it right after we are done.** To check if it is installed you can either look for it in the applications menu or type in terminal:
 
  ```
   firefox
@@ -110,57 +89,97 @@ You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is, open
   ```
   sudo apt install firefox
   ```
+
 ### Libraries required by the VPN
- 
  To install them type in the terminal:
  
   ```
-  sudo apt-get install libpam0g:i386 libx11-6:i386 libstdc++6:i386 libstdc++5:i386 libnss3-tools xterm openssl 	
+  sudo apt install libpam0g:i386 libx11-6:i386 libstdc++6:i386 libstdc++5:i386 libnss3-tools xterm openssl
   ```
 
 ### SSL network extender
+ To install it you can run the following command:
+ ```
+ wget -q -O snx_install.sh https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh --no-check-certificate && chmod +x ./snx_install.sh && sudo ./snx_install.sh
+```
+#### or
  Download it from the vpn's website: https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh
  <br/>Save it in an easy to reach location (ie. Desktop, Documents, Downloads)
  <br/>Open a terminal window and type:
  ```
   cd ~/(location where it was saved (ie. Documents, Downloads, Desktop)) && sudo bash ./snx_install.sh
 ```
-Afterwards reboot your computer or VM.
+### cshell
+**Firefox needs to be opened at least once after being installed before we can install cshell, so if you have never opened Firefox after installing it please do now and close it rigth after.**
 
-## Finishing setup
+To install it you can run the following command:
+```
+wget -q -O cshell_install.sh https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cshell_install.sh --no-check-certificate && chmod +x ./cshell_install.sh && sudo ./cshell_install.sh
+```
+#### or
+Download it from the vpn's website: https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cshell_install.sh
+ <br/>Save it in an easy to reach location (ie. Desktop, Documents, Downloads)
+ <br/>Open a terminal window and type:
+ ```
+  cd ~/(location where it was saved (ie. Documents, Downloads, Desktop)) && sudo bash ./cshell_install.sh
+```
 
- * Open Firefox and go to https://vpn.fct.unl.pt/  
- * Sign-in using your CLIP credentials
- * You should see a window like this ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/1VPN.png)
- * Press <kbd>Connect</kbd>
- * A window like this should pop up ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/2VPN.png)
- * Press "Click here to download the Mobile Access Portal Agent."
- * Save it in an easy to reach location (ie. Desktop, Documents, Downloads)
- * Open a terminal window and type:
-    ```
-     cd ~/(location where it was saved (ie. Documents, Downloads, Desktop)) && sudo bash ./cshell_install.sh
-    ```
- * Close all Firefox windows when it asks
- * Once it finishes installing you can close the terminal and open Firefox
- * Go to https://localhost:14186/id/
- * You should see this ![window](https://github.com/Diogo-Paulico/FCT-VPN/blob/master/3VPN.png)
- * Press Advanced > Accept the risk and proceed
- * You should see a random string of digits, meaning it is working as intended.
- * Restart Firefox and open https://vpn.fct.unl.pt/
- * Login and press connect
- * Press <kbd>Trust</kbd> in the window that pops up, and <kbd>Yes</kbd> in the next one
- * You should now be connected. 
- * Attempt to access Mooshak:
-    http://mooshak.di.fct.unl.pt/~mooshak/
-    OR
-    http://193.136.122.90/~mooshak/
-   
-   The first one should take a while, it's normal.
+**If you don't intend to use Firefox as your browser you can now uninstall it!**
 
-## Arch Install:
- 
-## Normal access:
- After all these steps are done all you have to do to use it on a daily basis is access the VPN's website, login, click connect and you should be able to access Mooshak from outside the FCT
+### Accepting the SSL certificates
+For you to be able to use the VPN you are going to have to accept two SSL certificates, one for localhost (your machine), and another one for the VPN server. Do this on the browser you intend to use to connect to the VPN, normally this would be the browser you use normally.
+
+1. [SSL on Firefox](#ssl-on-firefox)
+2. [SSL on Chrome or Chromium](#ssl-on-chrome-or-chromium)
+
+#### SSL on Firefox
+* Go to https://localhost:14186/id/
+* You should see this ![firefox ssl accept screen](images/firefoxLocalhost0.png)
+* Now press where the red arrows point to
+![first button to click](images/firefoxLocalhost1.png)
+![second button to click](images/firefoxLocalhost2.png)
+* You should see a screen with a random string of digits, like shown below (digits have been blured), meaning it is working as intended ![string of digits screen](images/firefoxLocalhost3.png)
+
+* Now repeat the same steps but on https://vpn.fct.unl.pt/ 
+* You should see this screen if successful ![vpn login screen](images/firefoxVPN.png)
+
+#### SSL on Chrome or Chromium
+* Go to https://localhost:14186/id/
+* You should see this ![chromium ssl accept screen](images/chromiumLocalhost0.png)
+* Now press where the red arrows point to
+![first button to click](images/chromiumLocalhost1.png)
+![second button to click](images/chromiumLocalhost2.png)
+* You should see a screen with a random string of digits, like shown below (digits have been blured), meaning it is working as intended ![string of digits screen](images/chromiumLocalhost3.png)
+
+* Now repeat the same steps but on https://vpn.fct.unl.pt/ 
+* You should see this screen if successful ![vpn login screen](images/chromiumVPN.png)
+
+### Connecting for the first time
+* Open your browser and go to https://vpn.fct.unl.pt/ , you should see the following page ![vpn login page](images/vpnLoginPage.png)
+* Sign-in using you CLIP credentials
+* You should be brought to this page, where you will be asked to allow popups on the current page, to do this click where the red arrows point
+  * Firefox ![firefox allow popups](images/firefoxEnablePopups.png)
+  * Chrome/Chromium ![chromium allow popups](images/chromiumEnablePopups.png)
+* Now reload the page and this window should popup ![vpn connect popup](images/vpnConnectPopup.png)
+* If it doesn't just click connect on the home page and it should popup ![vpn home connect button](images/vpnHome.png)
+* Next one window should popup, click where the red arrow points, when you do the next window will popup, do the same on that one ![vpn accept 1](images/vpnAccept1.png) ![vpn accept 2](images/vpnAccept2.png)
+* The first window that popped up should now look like this ![vpn connect popup when connected](images/vpnConnectPopupConnected.png)
+
+**GOOD JOB YOU'RE NOW CONNECTED**
+
+You can now attempt to access Mooshak:
+  * http://mooshak.di.fct.unl.pt/~mooshak/ (This one can take a while to load, it's normal)
+  * http://193.136.122.90/~mooshak/
+
+## Normal Access
+* Connecting
+  * Open your browser and go to https://vpn.fct.unl.pt/
+  * Sign-in using your CLIP credentials
+  * Wait for the popup, or click <kbd>Connect</kbd> to make it open if it doesn't show up on it's own.
+  * Wait for the connection to be established and for Status to change to connected.
+* Disconnecting
+  * Either click <kbd>Disconnect</kbd> on the home page (the button that is now where <kbd>Connect</kbd> used to be), or click <kbd>Disconnect</kbd> on the popup. Closing the popup also works.
+
 
  ## Uninstallation:
 
