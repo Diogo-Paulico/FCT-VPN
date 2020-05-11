@@ -231,7 +231,7 @@ main() {
     #try
     update&&upgrade&&install_java&&install_firefox&&install_dependencies&&make_temp_dir&&install_snx&&setup_firefox&&install_cshell&&cleanup || {
         #catch
-        echo -e "\e[31mVPN install failled! Please retry!\e[0m"
+        echo -e "\e[31mVPN install failled! Please try again!\e[0m"
         return 1
     }
 
