@@ -1,5 +1,50 @@
 #!/bin/bash
 
+# Ignore the echo "" at the top of each function, they are only there to provide spacing and make everything pretty. Sometimes there is one, sometimes two.
+
+update() {
+    if [ "$UPDATE_FLAG" = true ]; then
+        echo ""
+        echo -e "\e[33mUpdating system...\e[0m"
+        if [ "$VERBOSE_FLAG" = true ]; then
+            apt update
+        else
+            apt update >/dev/null 2>&1
+        fi
+
+        if [ $? = 0 ]; then
+            echo -e "\e[32mSystem has been updated!\e[0m"
+            return 0
+        else
+            echo -e "\e[31mSystem update as failed!\e[0m"
+            return 1
+        fi
+    fi
+}
+
+upgrade() {
+    if [ "$UPGRADE_FLAG" = true ]; then
+        echo ""
+        # while updating is necessary to be sure we are downloading the most recent versions of the dependencies,
+        # I don't think we should upgrade the already installed software on the users computer (except for the stuff we are going to use ofc)
+        # because they migth want to use an older version of something
+        echo -e "\e[33mUpgrading system...\e[0m"
+        if [ "$VERBOSE_FLAG" = true ]; then
+            apt upgrade -y
+        else
+            apt upgrade -y >/dev/null 2>&1
+        fi
+
+        if [ $? = 0 ]; then
+            echo -e "\e[32mSystem has been upgraded!\e[0m"
+            return 0
+        else
+            echo -e "\e[31mSystem upgrade as failed!\e[0m"
+            return 1
+        fi
+    fi
+}
+
 install_java() {
     echo ""
     if [[ $(which java) ]]; then
@@ -101,8 +146,9 @@ install_snx() {
 
 setup_firefox() {
     echo ""
+    echo ""
     echo -e "\e[1m\e[4mFirefox needs to have been opened at least once in this machine for the install to work, so please \e[32mopen\e[39m and \e[31mclose\e[39m it and then press \e[32mEnter to continue\e[0m."
-    read -p ""
+    read
 }
 
 install_cshell() {
@@ -145,6 +191,7 @@ helpMessage() {
     echo -e """
 $(basename "$0") [-h] [-d] [-g] [-v]
 Installs the Check Point's VPN software used by FCT-UNL.
+Requires root privileges to run!
 
 where:
  -h  show this help message
@@ -155,59 +202,18 @@ where:
     exit 0
 }
 
-update() {
-    echo ""
-    if [ "$UPDATE_FLAG" = true ]; then
-        echo -e "\e[33mUpdating system...\e[0m"
-        if [ "$VERBOSE_FLAG" = true ]; then
-            apt update
-        else
-            apt update >/dev/null 2>&1
-        fi
-
-        if [ $? = 0 ]; then
-            echo -e "\e[32mSystem has been updated!\e[0m"
-            return 0
-        else
-            echo -e "\e[31mSystem update as failed!\e[0m"
-            return 1
-        fi
-    fi
-}
-
-upgrade() {
-    echo ""
-    if [ "$UPGRADE_FLAG" = true ]; then
-        # while updating is necessary to be sure we are downloading the most recent versions of the dependencies,
-        # I don't think we should upgrade the already installed software on the users computer (except for the stuff we are going to use ofc)
-        # because they migth want to use an older version of something
-        echo -e "\e[33mUpgrading system...\e[0m"
-        if [ "$VERBOSE_FLAG" = true ]; then
-            apt upgrade -y
-        else
-            apt upgrade -y >/dev/null 2>&1
-        fi
-
-        if [ $? = 0 ]; then
-            echo -e "\e[32mSystem has been upgraded!\e[0m"
-            return 0
-        else
-            echo -e "\e[31mSystem upgrade as failed!\e[0m"
-            return 1
-        fi
-    fi
-}
-
 main() {
     clear
 
-    echo "This script checks for java and firefox and installs them if they're not installed already, then it will install the needed dependencies, and then the vpn software."
+    echo "This script checks if java and firefox are installed, if not it installs them, then it will install the needed dependencies, and then the vpn software."
+    echo ""
     echo -e "\e[31mThe installation process will interfere with browsers, specially \e[4mfirefox\e[24m, so it's advised to save anything you might have to and close your browser before starting, \e[1m\e[4mor you might loose your work!\e[0m"
     echo -e "\e[1m\e[41mLAST WARNING: CLOSE YOUR BROWSERS\e[0m"
     echo ""
+    echo ""
     echo "Follow the on-screen instructions and go back to the guide when told to."
     echo -e "Press \e[32mEnter to start\e[0m the installation, or \e[31mCTRL-C to cancel\e[0m."
-    read -p ""
+    read
 
     #update
     #upgrade
@@ -247,5 +253,10 @@ while getopts ":hdgv" opt; do
     v) VERBOSE_FLAG=true ;;
     esac
 done
+
+if [ "$EUID" -ne 0 ]
+  then echo -e "\e[31mThis script needs root privileges! Please run with sudo!\e[0m"
+  exit
+fi
 
 main
