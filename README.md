@@ -20,9 +20,10 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
  * Should work for all Ubuntu distros (Ubuntu, Kubuntu, Lubuntu, Xubuntu, Pop Os!, Elementary OS, Linux Mint, ...)
 
 ## VMs 
-These VMs contain the VPN already installed, the website is bookmarked on firefox
+These VMs contain the VPN already installed, you need Virtual Box to use these, the website is bookmarked on firefox
  * Virtual machine with gcc and java installed (Lubuntu 18.04 32 bits) : https://drive.google.com/file/d/1Hu9sg8IwZ9ZX_jeraHorOeNilWPwPXq6/view?usp=sharing
  * Virtual machine with Eclipse and OCaml installed (Lubuntu 18.04 64 bits): https://drive.google.com/file/d/1BunnK3Sk6bq4ATfK613Z4AArjQ__uObr/view?usp=sharing
+ * Virtual machine with Eclipse (Java, C and OCaml) and Visual Studio Code (C) (Lubuntu 18.04 64 bits): https://drive.google.com/file/d/1DkaKP6RnlobPsvSvDfs04h2bTx5lzKZH/view?usp=sharing
 
 
 ## Auto Installation (For Ubuntu based distros)
@@ -37,7 +38,7 @@ These VMs contain the VPN already installed, the website is bookmarked on firefo
   When you return here follow the Manual Installation from the ["Accepting the SSL certificates"](#accepting-the-ssl-certificates) section onward.
 
 ## Auto Installation (For Arch based distros)
-Wait? Did you expect an install script for Arch? Aren't y'all so much better than other linux users because you "use arch btw"? If that's the case I think y'all are very capable of figuring out how to install this on your own... (Just follow the manual installation while replacing the package installs with the Arch equivalent commands and package names.)
+Currently Unavailable
 
 ## Manual Installation
 To install the vpn we are going to be using the terminal, so keep one open at all times during this install. When told to run a command or type into the terminal, type and execute the given command. The terminal can be acessed through the applications menu.
