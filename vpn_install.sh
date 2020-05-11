@@ -48,10 +48,10 @@ upgrade() {
 install_java() {
     echo ""
     if [[ $(which java) ]]; then
-        echo -e "\e[7m1/6\e[27m - \e[32mJava is installed.\e[0m"
+        echo -e "\e[7m1/7\e[27m - \e[32mJava is installed.\e[0m"
     else
-        echo -e "\e[7m1/6\e[27m - \e[31mJava not found.\e[0m"
-        echo -e "\e[7m1/6\e[27m - \e[33mInstalling Java...\e[0m"
+        echo -e "\e[7m1/7\e[27m - \e[31mJava not found.\e[0m"
+        echo -e "\e[7m1/7\e[27m - \e[33mInstalling Java...\e[0m"
 
         if [ "$VERBOSE_FLAG" = true ]; then
             apt install default-jre -y
@@ -60,10 +60,10 @@ install_java() {
         fi
 
         if [ $? = 0 ]; then
-            echo -e "\e[7m1/6\e[27m - \e[32mJava has been installed!\e[0m"
+            echo -e "\e[7m1/7\e[27m - \e[32mJava has been installed!\e[0m"
             return 0
         else
-            echo -e "\e[7m1/6\e[27m - \e[31mJava install has failed!\e[0m"
+            echo -e "\e[7m1/7\e[27m - \e[31mJava install has failed!\e[0m"
             return 1
         fi
     fi
@@ -72,10 +72,10 @@ install_java() {
 install_firefox() {
     echo ""
     if [[ $(which firefox) ]]; then
-        echo -e "\e[7m2/6\e[27m - \e[32mFirefox is installed.\e[0m"
+        echo -e "\e[7m2/7\e[27m - \e[32mFirefox is installed.\e[0m"
     else
-        echo -e "\e[7m2/6\e[27m - \e[31mFirefox not found.\e[0m"
-        echo -e "\e[7m2/6\e[27m - \e[33mInstalling Firefox...\e[0m"
+        echo -e "\e[7m2/7\e[27m - \e[31mFirefox not found.\e[0m"
+        echo -e "\e[7m2/7\e[27m - \e[33mInstalling Firefox...\e[0m"
 
         if [ "$VERBOSE_FLAG" = true ]; then
             apt install firefox -y
@@ -84,10 +84,10 @@ install_firefox() {
         fi
 
         if [ $? = 0 ]; then
-            echo -e "\e[7m2/6\e[27m - \e[32mFirefox has been installed!\e[0m"
+            echo -e "\e[7m2/7\e[27m - \e[32mFirefox has been installed!\e[0m"
             return 0
         else
-            echo -e "\e[7m2/6\e[27m - \e[31mFirefox install has failed!\e[0m"
+            echo -e "\e[7m2/7\e[27m - \e[31mFirefox install has failed!\e[0m"
             return 1
         fi
     fi
@@ -95,7 +95,7 @@ install_firefox() {
 
 install_dependencies() {
     echo ""
-    echo -e "\e[7m3/6\e[27m - \e[33mInstalling dependencies...\e[0m"
+    echo -e "\e[7m3/7\e[27m - \e[33mInstalling dependencies...\e[0m"
 
     if [ "$VERBOSE_FLAG" = true ]; then
         apt install libpam0g:i386 libx11-6:i386 libstdc++6:i386 libstdc++5:i386 libnss3-tools xterm openssl -y
@@ -104,10 +104,10 @@ install_dependencies() {
     fi
 
     if [ $? = 0 ]; then
-        echo -e "\e[7m3/6\e[27m - \e[32mDependencies have been installed!\e[0m"
+        echo -e "\e[7m3/7\e[27m - \e[32mDependencies have been installed!\e[0m"
         return 0
     else
-        echo -e "\e[7m3/6\e[27m - \e[31mDependencies install has failed!\e[0m"
+        echo -e "\e[7m3/7\e[27m - \e[31mDependencies install has failed!\e[0m"
         return 1
     fi
 }
@@ -123,7 +123,7 @@ make_temp_dir() {
 
 install_snx() {
     echo ""
-    echo -e "\e[7m4/6\e[27m - \e[33mInstalling snx...\e[0m"
+    echo -e "\e[7m4/7\e[27m - \e[33mInstalling snx...\e[0m"
 
     if [ "$VERBOSE_FLAG" = true ]; then
         wget -q -O snx_install.sh https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh --no-check-certificate
@@ -136,24 +136,50 @@ install_snx() {
     fi
 
     if [ $? = 0 ]; then
-        echo -e "\e[7m4/6\e[27m - \e[32msnx has been installed!\e[0m"
+        echo -e "\e[7m4/7\e[27m - \e[32msnx has been installed!\e[0m"
         return 0
     else
-        echo -e "\e[7m4/6\e[27m - \e[31msnx install has failed!\e[0m"
+        echo -e "\e[7m4/7\e[27m - \e[31msnx install has failed!\e[0m"
         return 1
     fi
 }
 
 setup_firefox() {
     echo ""
-    echo ""
-    echo -e "\e[1m\e[4mFirefox needs to have been opened at least once in this machine for the install to work, so please \e[32mopen\e[39m and \e[31mclose\e[39m it and then press \e[32mEnter to continue\e[0m."
-    read
+
+    echo -e "\e[7m5/7\e[27m - Firefox needs to have been opened at least once in this machine for the install to work, so we are opening and closing it just to be sure. Don't worry about it not showing up when we open it because we are going to open it in headless mode.\e[0m"
+    echo -e "\e[7m5/7\e[27m - \e[33mOpening firefox...\e[0m"
+    if [ "$VERBOSE_FLAG" = true ]; then
+        su -p -c 'firefox --headless&' - $SUDO_USER
+        echo "Closing in 5..."
+        sleep 1
+        echo "Closing in 4..."
+        sleep 1
+        echo "Closing in 3..."
+        sleep 1
+        echo "Closing in 2..."
+        sleep 1
+        echo "Closing in 1..."
+        sleep 1
+    else
+        su -p -c 'firefox --headless&' - $SUDO_USER >/dev/null 2>&1
+        sleep 5
+    fi
+    echo -e "\e[7m5/7\e[27m - \e[33mClosing firefox...\e[0m"
+    pkill firefox
+
+    if [ $? = 0 ]; then
+        echo -e "\e[7m5/7\e[27m - \e[32mFirefox setup succeded!\e[0m"
+        return 0
+    else
+        echo -e "\e[7m5/7\e[27m - \e[31mFirefox setup failed!\e[0m"
+        return 1
+    fi
 }
 
 install_cshell() {
     echo ""
-    echo -e "\e[7m5/6\e[27m - \e[33mInstalling cshell...\e[0m"
+    echo -e "\e[7m6/7\e[27m - \e[33mInstalling cshell...\e[0m"
 
     if [ "$VERBOSE_FLAG" = true ]; then
         wget -q -O cshell_install.sh https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cshell_install.sh --no-check-certificate
@@ -166,25 +192,25 @@ install_cshell() {
     fi
 
     if [ $? = 0 ]; then
-        echo -e "\e[7m5/6\e[27m - \e[32mcshell has been installed!\e[0m"
+        echo -e "\e[7m6/7\e[27m - \e[32mcshell has been installed!\e[0m"
         return 0
     else
-        echo -e "\e[7m5/6\e[27m - \e[31mcshell install has failed!\e[0m"
+        echo -e "\e[7m6/7\e[27m - \e[31mcshell install has failed!\e[0m"
         return 1
     fi
 }
 
 cleanup() {
     echo ""
-    echo -e "\e[7m6/6\e[27m - \e[33mStarting cleanup...\e[0m"
+    echo -e "\e[7m7/7\e[27m - \e[33mStarting cleanup...\e[0m"
     cd ..
     rm -r vpnInstaller
     if [ $? != 0 ]; then
-        echo -e "\e[7m6/6\e[27m - \e[31mFailed at deleting temporary folder! (Couldn't delete the vpnInstaller folder)\e[0m"
+        echo -e "\e[7m7/7\e[27m - \e[31mFailed at deleting temporary folder! (Couldn't delete the vpnInstaller folder)\e[0m"
         return 1
     fi
     # TODO MAYBE DELETE ITSELF?
-    echo -e "\e[7m6/6\e[27m - \e[32mCleanup complete!\e[0m"
+    echo -e "\e[7m7/7\e[27m - \e[32mCleanup complete!\e[0m"
 }
 
 helpMessage() {
@@ -229,12 +255,13 @@ main() {
     #cleanup
 
     #try
-    update&&upgrade&&install_java&&install_firefox&&install_dependencies&&make_temp_dir&&install_snx&&setup_firefox&&install_cshell&&cleanup || {
+    update && upgrade && install_java && install_firefox && install_dependencies && make_temp_dir && install_snx && setup_firefox && install_cshell && cleanup || {
         #catch
         echo -e "\e[31mVPN install failled! Please try again!\e[0m"
         return 1
     }
 
+    echo ""
     echo ""
     echo -e "\e[1m\e[4mNow go back to the guide.\e[0m You may also delete this script, and uninstall firefox if it was installed during this setup and you have no use for it."
 
@@ -254,9 +281,9 @@ while getopts ":hdgv" opt; do
     esac
 done
 
-if [ "$EUID" -ne 0 ]
-  then echo -e "\e[31mThis script needs root privileges! Please run with sudo!\e[0m"
-  exit
+if [ "$EUID" -ne 0 ]; then
+    echo -e "\e[31mThis script needs root privileges! Please run with sudo!\e[0m"
+    exit
 fi
 
 main
