@@ -6,7 +6,7 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
 1. [Compatibility](#compatibility)
 2. [VMs](#vms)
 3. [Auto Installation (For Ubuntu based distros)](#auto-installation-for-ubuntu-based-distros)
-4. [Auto Installation (For Arch based distros)](#auto-installation-for-arch-based-distros) 
+4. [Auto Installation (For Arch based distros)](#auto-installation-for-arch-based-distros)
 5. [Manual Installation](#manual-installation)
 6. [Normal Access](#normal-access)
 7. [Uninstallation](#uninstallation)
@@ -19,7 +19,7 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
  * Tested and working on Pop!_OS 19.10 (64 bits) with Chrome 80 installed
  * Should work for all Ubuntu distros (Ubuntu, Kubuntu, Lubuntu, Xubuntu, Pop Os!, Elementary OS, Linux Mint, ...)
 
-## VMs 
+## VMs
 These VMs contain the VPN already installed, you need Virtual Box to use these, the website is bookmarked on firefox
  * Virtual machine with gcc and java installed (Lubuntu 18.04 32 bits) : https://drive.google.com/file/d/1Hu9sg8IwZ9ZX_jeraHorOeNilWPwPXq6/view?usp=sharing
  * Virtual machine with Eclipse and OCaml installed (Lubuntu 18.04 64 bits): https://drive.google.com/file/d/1BunnK3Sk6bq4ATfK613Z4AArjQ__uObr/view?usp=sharing
@@ -30,7 +30,7 @@ These VMs contain the VPN already installed, you need Virtual Box to use these, 
   Massive thanks to João Arvana for greatly improving this installer and guide.</br>
   Open a terminal window and run the following command:
 
-  ``` 
+  ```
   wget -O vpn_install.sh https://raw.githubusercontent.com/Diogo-Paulico/FCT-VPN/master/vpn_install.sh && chmod -v +x ./vpn_install.sh && sudo ./vpn_install.sh
   ```
 
@@ -39,8 +39,9 @@ These VMs contain the VPN already installed, you need Virtual Box to use these, 
   When you return here follow the Manual Installation from the ["Accepting the SSL certificates"](#accepting-the-ssl-certificates) section onward.
 
 ## Auto Installation (For Arch based distros)
-Currently Unavailable
-
+  ```
+  wget -O vpn_install.sh https://raw.githubusercontent.com/Diogo-Paulico/FCT-VPN/master/vpn_install_arch.sh && chmod -v +x ./vpn_install_arch.sh && sudo ./vpn_install_arch.sh
+```
 ## Manual Installation
 To install the vpn we are going to be using the terminal, so keep one open at all times during this install. When told to run a command or type into the terminal, type and execute the given command. The terminal can be acessed through the applications menu.
 
@@ -55,8 +56,8 @@ You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is run t
   OpenJDK Runtime Environment (build 1.8.0_242-8u242-b08-0ubuntu3~19.10-b08)
   OpenJDK 64-Bit Server VM (build 25.242-b08, mixed mode)
   ```
-  Java is installed. 
-  
+  Java is installed.
+
   If it looks like this:
   ```
     The program ‘java’ can be found in the following packages:
@@ -92,7 +93,7 @@ You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is run t
 
 ### Libraries required by the VPN
  To install them type in the terminal:
- 
+
   ```
   sudo apt install libpam0g:i386 libx11-6:i386 libstdc++6:i386 libstdc++5:i386 libnss3-tools xterm openssl
   ```
@@ -140,7 +141,7 @@ For you to be able to use the VPN you are going to have to accept two SSL certif
 ![second button to click](images/firefoxLocalhost2.png)
 * You should see a screen with a random string of digits, like shown below (digits have been blured), meaning it is working as intended ![string of digits screen](images/firefoxLocalhost3.png)
 
-* Now repeat the same steps but on https://vpn.fct.unl.pt/ 
+* Now repeat the same steps but on https://vpn.fct.unl.pt/
 * You should see this screen if successful ![vpn login screen](images/firefoxVPN.png)
 
 #### SSL on Chrome or Chromium
@@ -151,7 +152,7 @@ For you to be able to use the VPN you are going to have to accept two SSL certif
 ![second button to click](images/chromiumLocalhost2.png)
 * You should see a screen with a random string of digits, like shown below (digits have been blured), meaning it is working as intended ![string of digits screen](images/chromiumLocalhost3.png)
 
-* Now repeat the same steps but on https://vpn.fct.unl.pt/ 
+* Now repeat the same steps but on https://vpn.fct.unl.pt/
 * You should see this screen if successful ![vpn login screen](images/chromiumVPN.png)
 
 ### Connecting for the first time
