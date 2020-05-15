@@ -17,6 +17,7 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
  * Tested and working on Ubuntu 19.10 (64 bits) with Firefox 73 installed
  * Tested and working on Pop!_OS 19.10 (64 bits) with Chrome 80 installed
  * Should work for all Ubuntu distros (Ubuntu, Kubuntu, Lubuntu, Xubuntu, Pop Os!, Elementary OS, Linux Mint, ...)
+ * Tested and mostly working on Arch Linux, but rebooting kills it.
 
 ## VMs
 These VMs contain the VPN already installed, you need Virtual Box to use these, the website is bookmarked on firefox
@@ -187,3 +188,4 @@ You can now attempt to access Mooshak:
 
  ## Known issues:
   * Can only access Mooshak, none other of the FCT's websites seem to work
+  * Rebooting on Arch Linux does not start up the cshell process, so that file has to be re-ran.
