@@ -5,12 +5,11 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
 # Index
 1. [Compatibility](#compatibility)
 2. [VMs](#vms)
-3. [Auto Installation (For Ubuntu based distros)](#auto-installation-for-ubuntu-based-distros)
-4. [Auto Installation (For Arch based distros)](#auto-installation-for-arch-based-distros)
-5. [Manual Installation](#manual-installation)
-6. [Normal Access](#normal-access)
-7. [Uninstallation](#uninstallation)
-8. [Known issues](#known-issues)
+3. [Auto Installation (For Ubuntu/Arch based distros)](#auto-installation-for-ubuntu-based-distros)
+4. [Manual Installation](#manual-installation)
+5. [Normal Access](#normal-access)
+6. [Uninstallation](#uninstallation)
+7. [Known issues](#known-issues)
 
 ## Compatibility
  * Tested and working on Ubuntu 16.04 LTS (32 & 64 bits) with Firefox 45 installed
@@ -26,22 +25,24 @@ These VMs contain the VPN already installed, you need Virtual Box to use these, 
  * Virtual machine with Eclipse (Java, C and OCaml) and Visual Studio Code (C) (Lubuntu 18.04 64 bits): https://drive.google.com/file/d/1DkaKP6RnlobPsvSvDfs04h2bTx5lzKZH/view?usp=sharing
 
 
-## Auto Installation (For Ubuntu based distros)
+## Auto Installation (For Ubuntu or Arch based distros)
   Massive thanks to João Arvana for greatly improving this installer and guide.</br>
   Open a terminal window and run the following command:
 
+
+* Ubuntu
   ```
   wget -O vpn_install.sh https://raw.githubusercontent.com/Diogo-Paulico/FCT-VPN/master/vpn_install.sh && chmod -v +x ./vpn_install.sh && sudo ./vpn_install.sh
   ```
+* Arch
+  ```
+  wget -O vpn_install.sh https://raw.githubusercontent.com/Diogo-Paulico/FCT-VPN/master/vpn_install_arch.sh && chmod -v +x ./vpn_install_arch.sh && sudo ./vpn_install_arch.sh
+```
 
   Follow the instructions on-screen until asked to consult this guide again.
 
   When you return here follow the Manual Installation from the ["Accepting the SSL certificates"](#accepting-the-ssl-certificates) section onward.
 
-## Auto Installation (For Arch based distros)
-  ```
-  wget -O vpn_install.sh https://raw.githubusercontent.com/Diogo-Paulico/FCT-VPN/master/vpn_install_arch.sh && chmod -v +x ./vpn_install_arch.sh && sudo ./vpn_install_arch.sh
-```
 ## Manual Installation
 To install the vpn we are going to be using the terminal, so keep one open at all times during this install. When told to run a command or type into the terminal, type and execute the given command. The terminal can be acessed through the applications menu.
 
