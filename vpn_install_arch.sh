@@ -2,26 +2,6 @@
 
 # Ignore the echo "" at the top of each function, they are only there to provide spacing and make everything pretty. Sometimes there is one, sometimes two.
 
-update() {
-    if [ "$UPDATE_FLAG" = true ]; then
-        echo ""
-        echo -e "\e[33mUpdating system...\e[0m"
-        if [ "$VERBOSE_FLAG" = true ]; then
-			pacman -Syy --noconfirm
-        else
-            pacman -Syy --noconfirm >/dev/null 2>&1
-        fi
-
-        if [ $? = 0 ]; then
-            echo -e "\e[32mSystem has been updated!\e[0m"
-            return 0
-        else
-            echo -e "\e[31mSystem update as failed!\e[0m"
-            return 1
-        fi
-    fi
-}
-
 upgrade() {
     if [ "$UPGRADE_FLAG" = true ]; then
         echo ""
@@ -257,7 +237,7 @@ main() {
     #cleanup
 
     #try
-    update && upgrade && install_java && install_firefox && install_dependencies && make_temp_dir && install_snx && setup_firefox && install_cshell && cleanup || {
+    upgrade && install_java && install_firefox && install_dependencies && make_temp_dir && install_snx && setup_firefox && install_cshell && cleanup || {
         #catch
         echo -e "\e[31mVPN install failled! Please try again!\e[0m"
         return 1
