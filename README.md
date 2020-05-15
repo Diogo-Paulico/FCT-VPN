@@ -5,7 +5,7 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
 # Index
 1. [Compatibility](#compatibility)
 2. [VMs](#vms)
-3. [Auto Installation (For Ubuntu/Arch based distros)](#auto-installation-for-ubuntu-based-distros)
+3. [Auto Installation (For Ubuntu/Arch based distros)](#auto-installation-for-ubuntu-or-arch-based-distros)
 4. [Manual Installation](#manual-installation)
 5. [Normal Access](#normal-access)
 6. [Uninstallation](#uninstallation)
