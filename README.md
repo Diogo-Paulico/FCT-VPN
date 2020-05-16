@@ -37,7 +37,7 @@ These VMs contain the VPN already installed, you need Virtual Box to use these, 
   ```
 * Arch
   ```
-  wget -O vpn_install.sh https://raw.githubusercontent.com/Diogo-Paulico/FCT-VPN/master/vpn_install_arch.sh && chmod -v +x ./vpn_install_arch.sh && sudo ./vpn_install_arch.sh
+  wget -O vpn_install_arch.sh https://raw.githubusercontent.com/Diogo-Paulico/FCT-VPN/master/vpn_install_arch.sh && chmod -v +x ./vpn_install_arch.sh && sudo ./vpn_install_arch.sh
   ```
 
   Follow the instructions on-screen until asked to consult this guide again.
