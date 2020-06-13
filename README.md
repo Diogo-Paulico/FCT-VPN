@@ -12,6 +12,7 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
 7. [Known issues](#known-issues)
 
 ## Compatibility
+ * Tested and working on Lubuntu 20.04 (64 bits) with Firefox 77 installed
  * Tested and working on Ubuntu 16.04 LTS (32 & 64 bits) with Firefox 45 installed
  * Tested and working on Ubuntu 18.04 LTS (64 bits) with Firefox 72 installed
  * Tested and working on Ubuntu 19.10 (64 bits) with Firefox 73 installed
