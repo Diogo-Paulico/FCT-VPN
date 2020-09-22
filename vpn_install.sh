@@ -166,7 +166,7 @@ setup_firefox() {
         sleep 5
     fi
     echo -e "\e[7m5/7\e[27m - \e[33mClosing firefox...\e[0m"
-    pkill firefox
+    pkill -f firefox
 
     if [ $? = 0 ]; then
         echo -e "\e[7m5/7\e[27m - \e[32mFirefox setup succeded!\e[0m"
