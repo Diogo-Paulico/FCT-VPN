@@ -186,7 +186,11 @@ You can now attempt to access Mooshak:
 
 
  ## Uninstallation:
-```cd /usr/bin && sudo ./snx_uninstall && cd ./cshell && sudo bash ./cshell_uninstall.sh```
+ Open a terminal window and run the following command to uninstall the VPN:
+```
+cd /usr/bin && sudo ./snx_uninstall && cd ./cshell && sudo bash ./cshell_uninstall.sh
+```
+
  ## Known issues:
   * Can only access Mooshak, none other of the FCT's websites seem to work
   * Rebooting on Arch Linux does not start up the cshell process, so that file has to be re-ran.
