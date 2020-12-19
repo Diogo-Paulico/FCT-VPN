@@ -22,6 +22,7 @@ This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them
 
 ## VMs
 These VMs contain the VPN already installed, you need Virtual Box to use these, the website is bookmarked on firefox
+ * VMs' password: user
  * Virtual machine with gcc and java installed (Lubuntu 18.04 32 bits) : https://drive.google.com/file/d/1Hu9sg8IwZ9ZX_jeraHorOeNilWPwPXq6/view?usp=sharing
  * Virtual machine with Eclipse (Java, C and OCaml) and Visual Studio Code (C) (Lubuntu 20.04 64 bits): https://drive.google.com/file/d/1xgpTP3JPQ8BnLoX1Qv51dyvz-bv2zUAs/view?usp=sharing
 
