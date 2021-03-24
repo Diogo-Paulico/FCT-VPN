@@ -192,5 +192,4 @@ cd /usr/bin && sudo ./snx_uninstall && cd ./cshell && sudo bash ./cshell_uninsta
 ```
 
  ## Known issues:
-  * Can only access Mooshak, none other of the FCT's websites seem to work
   * Rebooting on Arch Linux does not start up the cshell process, so that file has to be re-ran.
