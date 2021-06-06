@@ -19,7 +19,7 @@ upgrade() {
             echo -e "\e[32mSystem has been upgraded!\e[0m"
             return 0
         else
-            echo -e "\e[31mSystem upgrade as failed!\e[0m"
+            echo -e "\e[31mSystem upgrade has failed!\e[0m"
             return 1
         fi
     fi
@@ -93,8 +93,8 @@ setup_firefox() {
 
     echo -e "\e[7m5/7\e[27m - Firefox needs to have been opened at least once in this machine for the install to work, so we are opening and closing it just to be sure. Don't worry about it not showing up when we open it because we are going to open it in headless mode.\e[0m"
     echo -e "\e[7m5/7\e[27m - \e[33mOpening firefox...\e[0m"
+        su -p -c 'firefox --headless&' - $SUDO_USER >$STDOUT 2>&1
     if [ "$VERBOSE_FLAG" = true ]; then
-        su -p -c 'firefox --headless&' - $SUDO_USER
         echo "Closing in 5..."
         sleep 1
         echo "Closing in 4..."
@@ -106,7 +106,6 @@ setup_firefox() {
         echo "Closing in 1..."
         sleep 1
     else
-        su -p -c 'firefox --headless&' - $SUDO_USER >/dev/null 2>&1
         sleep 5
     fi
     echo -e "\e[7m5/7\e[27m - \e[33mClosing firefox...\e[0m"
