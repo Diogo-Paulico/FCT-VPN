@@ -79,10 +79,10 @@ install_dependencies() {
 
     if [ "$VERBOSE_FLAG" = true ]; then
 		pacman -S lib32-libx11 lib32-pam  openssl libnss_nis xterm --noconfirm
-        su -p -c 'yay -S lib32-libstdc++5 --noconfirm' - $SUDO_USER
+        su -p -c 'yay -S lib32-libstdc++5 --noconfirm --sudoflags "-S"' - $SUDO_USER >/dev/null 2>&1
     else
-        pacman -S lib32-libx11 lib32-pam openssl libnss_nis xterm --noconfirm && yay -S lib32-libstdc++5 --noconfirm >/dev/null 2>&1
-        su -p -c 'yay -S lib32-libstdc++5 --noconfirm' - $SUDO_USER >/dev/null 2>&1
+        pacman -S lib32-libx11 lib32-pam openssl libnss_nis xterm  --noconfirm >/dev/null 2>&1 # && yay -S lib32-libstdc++5 --noconfirm
+        su -p -c 'yay -S lib32-libstdc++5 --sudoflags "-S"' - $SUDO_USER >/dev/null 2>&1
     fi
 
     if [ $? = 0 ]; then
