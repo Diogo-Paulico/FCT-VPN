@@ -33,19 +33,9 @@ install_java() {
         echo -e "\e[7m1/7\e[27m - \e[31mJava not found.\e[0m"
         echo -e "\e[7m1/7\e[27m - \e[33mInstalling Java...\e[0m"
 
-        if [ "$VERBOSE_FLAG" = true ]; then
-			pacman -S jre-openjdk --noconfirm
-        else
-			pacman -S jre-openjdk --noconfirm >/dev/null 2>&1
-        fi
-
-        if [ $? = 0 ]; then
-            echo -e "\e[7m1/7\e[27m - \e[32mJava has been installed!\e[0m"
-            return 0
-        else
-            echo -e "\e[7m1/7\e[27m - \e[31mJava install has failed!\e[0m"
-            return 1
-        fi
+		pacman -S jre-openjdk --noconfirm >$STDOUT 2>&1
+		installMessage $? "Java"
+		return
     fi
 }
 
@@ -57,19 +47,9 @@ install_firefox() {
         echo -e "\e[7m2/7\e[27m - \e[31mFirefox not found.\e[0m"
         echo -e "\e[7m2/7\e[27m - \e[33mInstalling Firefox...\e[0m"
 
-        if [ "$VERBOSE_FLAG" = true ]; then
-			pacman -S firefox --noconfirm
-        else
-            pacman -S firefox --noconfirm>/dev/null 2>&1
-        fi
-
-        if [ $? = 0 ]; then
-            echo -e "\e[7m2/7\e[27m - \e[32mFirefox has been installed!\e[0m"
-            return 0
-        else
-            echo -e "\e[7m2/7\e[27m - \e[31mFirefox install has failed!\e[0m"
-            return 1
-        fi
+        pacman -S firefox --noconfirm>$STDOUT 2>&1
+		installMessage $? "Firefox"
+		return
     fi
 }
 
@@ -77,21 +57,15 @@ install_dependencies() {
     echo ""
     echo -e "\e[7m3/7\e[27m - \e[33mInstalling dependencies...\e[0m"
 
-    if [ "$VERBOSE_FLAG" = true ]; then
-		pacman -S lib32-libx11 lib32-pam  openssl libnss_nis xterm --noconfirm
-        su -p -c 'yay -S lib32-libstdc++5 --noconfirm --sudoflags "-S"' - $SUDO_USER
-    else
-        pacman -S lib32-libx11 lib32-pam openssl libnss_nis xterm --noconfirm >/dev/null 2>&1 # && yay -S lib32-libstdc++5 --noconfirm
-        su -p -c 'yay -S lib32-libstdc++5 --noconfirm --sudoflags "-S"' - $SUDO_USER >/dev/null 2>&1
-    fi
 
-    if [ $? = 0 ]; then
-        echo -e "\e[7m3/7\e[27m - \e[32mDependencies have been installed!\e[0m"
-        return 0
-    else
-        echo -e "\e[7m3/7\e[27m - \e[31mDependencies install has failed!\e[0m"
-        return 1
-    fi
+	useradd --system --create-home aur
+	echo 'aur ALL=NOPASSWD: /usr/bin/pacman' > /etc/sudoers.d/aur
+
+	pacman -S lib32-libx11 lib32-pam openssl libnss_nis xterm --noconfirm >$STDOUT 2>&1 &&
+		echo '      This step might take a bit' &&
+		su -p -c 'yay -S lib32-libstdc++5 --norebuild --noconfirm' - aur >$STDOUT 2>&1
+	installMessage $? "Dependency set"
+	return
 }
 
 make_temp_dir() {
@@ -107,23 +81,11 @@ install_snx() {
     echo ""
     echo -e "\e[7m4/7\e[27m - \e[33mInstalling snx...\e[0m"
 
-    if [ "$VERBOSE_FLAG" = true ]; then
-        wget -q -O snx_install.sh https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh --no-check-certificate
-        chmod +x ./snx_install.sh
-        ./snx_install.sh
-    else
-        wget -q -O snx_install.sh https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh --no-check-certificate >/dev/null 2>&1
-        chmod +x ./snx_install.sh >/dev/null 2>&1
-        ./snx_install.sh >/dev/null 2>&1
-    fi
-
-    if [ $? = 0 ]; then
-        echo -e "\e[7m4/7\e[27m - \e[32msnx has been installed!\e[0m"
-        return 0
-    else
-        echo -e "\e[7m4/7\e[27m - \e[31msnx install has failed!\e[0m"
-        return 1
-    fi
+	wget -q -O snx_install.sh https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/snx_install.sh --no-check-certificate >$STDOUT 2>&1
+	chmod +x ./snx_install.sh >$STDOUT 2>&1
+	./snx_install.sh >$STDOUT 2>&1
+	installMessage $? "snx"
+	return
 }
 
 setup_firefox() {
@@ -163,24 +125,23 @@ install_cshell() {
     echo ""
     echo -e "\e[7m6/7\e[27m - \e[33mInstalling cshell...\e[0m"
 
-    if [ "$VERBOSE_FLAG" = true ]; then
-        wget -q -O cshell_install.sh https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cshell_install.sh --no-check-certificate
-        chmod +x ./cshell_install.sh
-        ./cshell_install.sh
-    else
-        wget -q -O cshell_install.sh https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cshell_install.sh --no-check-certificate >/dev/null 2>&1
-        chmod +x ./cshell_install.sh >/dev/null 2>&1
-        ./cshell_install.sh >/dev/null 2>&1
-    fi
+	wget -q -O cshell_install.sh https://vpn.fct.unl.pt/sslvpn/SNX/INSTALL/cshell_install.sh --no-check-certificate >$STDOUT 2>&1 &&
+	chmod +x ./cshell_install.sh >$STDOUT 2>&1 &&
+	./cshell_install.sh >$STDOUT 2>&1
 
-    if [ $? = 0 ]; then
-        echo -e "\e[7m6/7\e[27m - \e[32mcshell has been installed!\e[0m"
-        return 0
-    else
-        echo -e "\e[7m6/7\e[27m - \e[31mcshell install has failed!\e[0m"
-        return 1
-    fi
+	installMessage $? "cshell"
+	return
 }
+
+installMessage(){
+	if [ $1 = 0 ]; then
+        echo -e "\e[7m6/7\e[27m - \e[32m$2 has been installed!\e[0m"
+    else
+        echo -e "\e[7m6/7\e[27m - \e[31m$2 install has failed!\e[0m"
+    fi
+	return $1
+}
+
 
 cleanup() {
     echo ""
@@ -192,8 +153,12 @@ cleanup() {
         return 1
     fi
     # TODO MAYBE DELETE ITSELF?
+
+	userdel --remove aur
+	rm /etc/sudoers.d/aur
     echo -e "\e[7m7/7\e[27m - \e[32mCleanup complete!\e[0m"
 }
+
 
 helpMessage() {
     echo -e """
@@ -215,7 +180,7 @@ main() {
 
     echo "This script checks if java and firefox are installed, if not it installs them, then it will install the needed dependencies, and then the vpn software."
     echo ""
-    echo -e "\e[31mThe installation process will interfere with browsers, specially \e[4mfirefox\e[24m, so it's advised to save anything you might have to and close your browser before starting, \e[1m\e[4mor you might lose your work!\e[0m"
+    echo -e "\e[31mThe installation process will interfere with browsers, specially \e[4mfirefox\e[24m, so its advised to save anything you might have to and close your browser before starting, \e[1m\e[4mor you might lose your work!\e[0m"
     echo -e "\e[1m\e[41mLAST WARNING: CLOSE YOUR BROWSERS\e[0m"
     echo ""
     echo ""
@@ -239,7 +204,7 @@ main() {
     #try
     upgrade && install_java && install_firefox && install_dependencies && make_temp_dir && install_snx && setup_firefox && install_cshell && cleanup || {
         #catch
-        echo -e "\e[31mVPN install failled! Please try again!\e[0m"
+        echo -e "\e[31mVPN install failed! Please try again!\e[0m"
         return 1
     }
 
@@ -253,13 +218,14 @@ main() {
 UPDATE_FLAG=true
 UPGRADE_FLAG=false
 VERBOSE_FLAG=false
+STDOUT="/dev/null"
 
 while getopts ":hdgv" opt; do
     case $opt in
     h) helpMessage ;;
     d) UPDATE_FLAG=false ;;
     g) UPGRADE_FLAG=true ;;
-    v) VERBOSE_FLAG=true ;;
+    v) VERBOSE_FLAG=true; STDOUT="/dev/stdout";;
     esac
 done
 
@@ -267,5 +233,10 @@ if [ "$EUID" -ne 0 ]; then
     echo -e "\e[31mThis script needs root privileges! Please run with sudo!\e[0m"
     exit
 fi
+if [ -z $(grep "^\[multilib" "/etc/pacman.conf") ]; then
+    echo -e "\e[31mPlease enable multilib in /etc/pacman.conf\e[0m"
+	exit
+fi
+
 
 main
