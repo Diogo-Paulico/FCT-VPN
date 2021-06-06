@@ -58,12 +58,12 @@ install_dependencies() {
     echo -e "\e[7m3/7\e[27m - \e[33mInstalling dependencies...\e[0m"
 
 
-	useradd --system --create-home aur
-	echo 'aur ALL=NOPASSWD: /usr/bin/pacman' > /etc/sudoers.d/aur
+	useradd --system --create-home aur-user-qzwsxedc
+	echo 'aur-user-qzwsxedc ALL=NOPASSWD: /usr/bin/pacman' > /etc/sudoers.d/aur-user-qzwsxedc
 
 	pacman -S lib32-libx11 lib32-pam openssl libnss_nis xterm --noconfirm >$STDOUT 2>&1 &&
 		echo '      This step might take a bit' &&
-		su -p -c 'yay -S lib32-libstdc++5 --norebuild --noconfirm' - aur >$STDOUT 2>&1
+		su -p -c 'yay -S lib32-libstdc++5 --norebuild --noconfirm' - aur-user-qzwsxedc >$STDOUT 2>&1
 	installMessage $? "Dependency set"
 	return
 }
@@ -154,8 +154,8 @@ cleanup() {
     fi
     # TODO MAYBE DELETE ITSELF?
 
-	userdel --remove aur
-	rm /etc/sudoers.d/aur
+	userdel --remove aur-user-qzwsxedc
+	rm /etc/sudoers.d/aur-user-qzwsxedc
     echo -e "\e[7m7/7\e[27m - \e[32mCleanup complete!\e[0m"
 }
 
