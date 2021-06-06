@@ -37,6 +37,7 @@ These VMs contain the VPN already installed, you need Virtual Box to use these, 
   wget -O vpn_install.sh https://raw.githubusercontent.com/Diogo-Paulico/FCT-VPN/master/vpn_install.sh && chmod -v +x ./vpn_install.sh && sudo ./vpn_install.sh
   ```
 * Arch
+
   Enable multilib by uncommenting these lines from /etc/pacman.conf if you haven't already
   ```
   [multilib]
