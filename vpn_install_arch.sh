@@ -79,10 +79,10 @@ install_dependencies() {
 
     if [ "$VERBOSE_FLAG" = true ]; then
 		pacman -S lib32-libx11 lib32-pam  openssl libnss_nis xterm --noconfirm
-        su -p -c 'yay -S lib32-libstdc++5 --noconfirm --sudoflags "-S"' - $SUDO_USER >/dev/null 2>&1
+        su -p -c 'yay -S lib32-libstdc++5 --noconfirm --sudoflags "-S"' - $SUDO_USER
     else
-        pacman -S lib32-libx11 lib32-pam openssl libnss_nis xterm  --noconfirm >/dev/null 2>&1 # && yay -S lib32-libstdc++5 --noconfirm
-        su -p -c 'yay -S lib32-libstdc++5 --sudoflags "-S"' - $SUDO_USER >/dev/null 2>&1
+        pacman -S lib32-libx11 lib32-pam openssl libnss_nis xterm --noconfirm >/dev/null 2>&1 # && yay -S lib32-libstdc++5 --noconfirm
+        su -p -c 'yay -S lib32-libstdc++5 --noconfirm --sudoflags "-S"' - $SUDO_USER >/dev/null 2>&1
     fi
 
     if [ $? = 0 ]; then
@@ -215,7 +215,7 @@ main() {
 
     echo "This script checks if java and firefox are installed, if not it installs them, then it will install the needed dependencies, and then the vpn software."
     echo ""
-    echo -e "\e[31mThe installation process will interfere with browsers, specially \e[4mfirefox\e[24m, so it's advised to save anything you might have to and close your browser before starting, \e[1m\e[4mor you might loose your work!\e[0m"
+    echo -e "\e[31mThe installation process will interfere with browsers, specially \e[4mfirefox\e[24m, so it's advised to save anything you might have to and close your browser before starting, \e[1m\e[4mor you might lose your work!\e[0m"
     echo -e "\e[1m\e[41mLAST WARNING: CLOSE YOUR BROWSERS\e[0m"
     echo ""
     echo ""
