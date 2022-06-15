@@ -1,6 +1,11 @@
 # VPN FCT - Linux
 This guide intends to allow the use of FCT's VPN on Linux. Any issues, post them in the issues tab <br/>THANKS: to Miguel, Duda, João and Tiago for early testing of the install and VMs;to João Arvana for making the install process easier, and optimizing this guide;
 
+## 💥💥Warning💥💥  
+Some students report this method has not worked for them. If this is your case, we advise you to try out [this repository](https://github.com/ruyrybeyro/chrootvpn) instead. Follow the instructions on that repository, using `vpn.fct.unl.pt` as your VPN endpoint.  
+The downside of that method is about 700MB of disk usage, the upside is that the VPN does not contaminate your actual system, and is contained to a chroot.
+Thanks to ruyrybeyro for the script!
+
 
 # Index
 1. [Compatibility](#compatibility)
