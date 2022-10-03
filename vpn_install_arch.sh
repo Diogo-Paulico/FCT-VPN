@@ -62,8 +62,10 @@ install_dependencies() {
 	echo 'aur-user-qzwsxedc ALL=NOPASSWD: /usr/bin/pacman' > /etc/sudoers.d/aur-user-qzwsxedc &&
 
 	pacman -S lib32-libx11 lib32-pam openssl libnss_nis xterm --noconfirm >$STDOUT 2>&1 &&
-		echo '      This step might take a bit' &&
-		su -p -c 'yay -S lib32-libstdc++5 --norebuild --noconfirm' - aur-user-qzwsxedc >$STDOUT 2>&1
+		if !(pacman -Q lib32-libstdc++5 >$STDOUT 2>&1); then
+			echo '      This step might take a bit' &&
+			su -p -c 'yay -S lib32-libstdc++5 --norebuild --noconfirm' - aur-user-qzwsxedc >$STDOUT 2>&1
+		fi
 	installMessage $? "Dependency set"
 	return
 }
