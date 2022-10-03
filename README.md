@@ -48,7 +48,8 @@ These VMs contain the VPN already installed, you need Virtual Box to use these, 
   [multilib]
   Include = /etc/pacman.d/mirrorlist
   ```
-  then
+  and install [lib32-libstdc++5](https://aur.archlinux.org/packages/lib32-libstdc++5) from the [AUR](https://wiki.archlinux.org/title/Arch_User_Repository#Installing_and_upgrading_packages) (**this is done automatically** by the script **if you have [yay](https://github.com/Jguer/yay)**).  
+  Then
   ```
   wget -O vpn_install_arch.sh https://raw.githubusercontent.com/Diogo-Paulico/FCT-VPN/master/vpn_install_arch.sh && chmod -v +x ./vpn_install_arch.sh && sudo ./vpn_install_arch.sh
   ```
