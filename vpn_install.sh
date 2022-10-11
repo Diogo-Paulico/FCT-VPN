@@ -113,12 +113,11 @@ install_dependencies() {
 }
 
 make_temp_dir() {
-    mkdir vpnInstaller
-    if [ $? != 0 ]; then
+    if ! mkdir vpnInstaller; then
         echo -e "\e[31mFailed at creating temporary folder! (A folder called vpnInstaller already exists)\e[0m"
         return 1
     fi
-    cd ./vpnInstaller
+    cd ./vpnInstaller || exit
 }
 
 install_snx() {
@@ -150,7 +149,7 @@ setup_firefox() {
     echo -e "\e[7m5/7\e[27m - Firefox needs to have been opened at least once in this machine for the install to work, so we are opening and closing it just to be sure. Don't worry about it not showing up when we open it because we are going to open it in headless mode.\e[0m"
     echo -e "\e[7m5/7\e[27m - \e[33mOpening firefox...\e[0m"
     if [ "$VERBOSE_FLAG" = true ]; then
-        su -p -c 'firefox --headless&' - $SUDO_USER
+        su -p -c 'firefox --headless&' - "$SUDO_USER"
         echo "Closing in 5..."
         sleep 1
         echo "Closing in 4..."
@@ -162,13 +161,12 @@ setup_firefox() {
         echo "Closing in 1..."
         sleep 1
     else
-        su -p -c 'firefox --headless&' - $SUDO_USER >/dev/null 2>&1
+        su -p -c 'firefox --headless&' - "$SUDO_USER" >/dev/null 2>&1
         sleep 5
     fi
     echo -e "\e[7m5/7\e[27m - \e[33mClosing firefox...\e[0m"
-    pkill -f firefox
 
-    if [ $? = 0 ]; then
+    if pkill -f firefox ; then
         echo -e "\e[7m5/7\e[27m - \e[32mFirefox setup succeded!\e[0m"
         return 0
     else
@@ -204,8 +202,7 @@ cleanup() {
     echo ""
     echo -e "\e[7m7/7\e[27m - \e[33mStarting cleanup...\e[0m"
     cd ..
-    rm -r vpnInstaller
-    if [ $? != 0 ]; then
+    if ! rm -r vpnInstaller ; then
         echo -e "\e[7m7/7\e[27m - \e[31mFailed at deleting temporary folder! (Couldn't delete the vpnInstaller folder)\e[0m"
         return 1
     fi
@@ -257,7 +254,7 @@ main() {
     #try
     update && upgrade && install_java && install_firefox && install_dependencies && make_temp_dir && install_snx && setup_firefox && install_cshell && cleanup || {
         #catch
-        echo -e "\e[31mVPN install failled! Please try again!\e[0m"
+        echo -e "\e[31mVPN install failed! Please try again!\e[0m"
         return 1
     }
 
@@ -278,6 +275,7 @@ while getopts ":hdgv" opt; do
     d) UPDATE_FLAG=false ;;
     g) UPGRADE_FLAG=true ;;
     v) VERBOSE_FLAG=true ;;
+    *) echo "Unkown options used"; exit ;;
     esac
 done
 

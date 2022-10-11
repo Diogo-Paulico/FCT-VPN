@@ -76,7 +76,7 @@ make_temp_dir() {
         echo -e "\e[31mFailed at creating temporary folder! (A folder called vpnInstaller already exists)\e[0m"
         return 1
     fi
-    cd ./vpnInstaller
+    cd ./vpnInstaller || exit
 }
 
 install_snx() {
@@ -95,7 +95,7 @@ setup_firefox() {
 
     echo -e "\e[7m5/7\e[27m - Firefox needs to have been opened at least once in this machine for the install to work, so we are opening and closing it just to be sure. Don't worry about it not showing up when we open it because we are going to open it in headless mode.\e[0m"
     echo -e "\e[7m5/7\e[27m - \e[33mOpening firefox...\e[0m"
-        su -p -c 'firefox --headless&' - $SUDO_USER >$STDOUT 2>&1
+        su -p -c 'firefox --headless&' - "$SUDO_USER" >$STDOUT 2>&1
     if [ "$VERBOSE_FLAG" = true ]; then
         echo "Closing in 5..."
         sleep 1
@@ -148,8 +148,7 @@ cleanup() {
     echo ""
     echo -e "\e[7m7/7\e[27m - \e[33mStarting cleanup...\e[0m"
     cd ..
-    rm -r vpnInstaller
-    if [ $? != 0 ]; then
+    if ! rm -r vpnInstaller ; then
         echo -e "\e[7m7/7\e[27m - \e[31mFailed at deleting temporary folder! (Couldn't delete the vpnInstaller folder)\e[0m"
         return 1
     fi
@@ -227,6 +226,7 @@ while getopts ":hdgv" opt; do
     d) UPDATE_FLAG=false ;;
     g) UPGRADE_FLAG=true ;;
     v) VERBOSE_FLAG=true; STDOUT="/dev/stdout";;
+    *) echo "Unknown options used" ; exit ;;
     esac
 done
 
