@@ -205,4 +205,7 @@ cd /usr/bin && sudo ./snx_uninstall && cd ./cshell && sudo bash ./cshell_uninsta
 ```
 
  ## Known issues:
-  * Rebooting on Arch Linux does not start up the cshell process, so that file has to be re-ran.
+  * Rebooting on Arch Linux does not start up the cshell process, so you have to run as a regular user:
+
+        xhost +"si:localuser:$USER_NAME"
+        /usr/bin/cshell/launcher
