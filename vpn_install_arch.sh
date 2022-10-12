@@ -71,11 +71,7 @@ install_dependencies() {
 }
 
 make_temp_dir() {
-    mkdir vpnInstaller
-    if [ $? != 0 ]; then
-        echo -e "\e[31mFailed at creating temporary folder! (A folder called vpnInstaller already exists)\e[0m"
-        return 1
-    fi
+    mkdir -p vpnInstaller
     cd ./vpnInstaller
 }
 
