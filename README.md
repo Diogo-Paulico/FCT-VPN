@@ -59,7 +59,7 @@ These VMs contain the VPN already installed, you need Virtual Box to use these, 
   When you return here follow the Manual Installation from the ["Accepting the SSL certificates"](#accepting-the-ssl-certificates) section onward.
 
 ## Manual Installation
-To install the vpn we are going to be using the terminal, so keep one open at all times during this install. When told to run a command or type into the terminal, type and execute the given command. The terminal can be acessed through the applications menu.
+To install the vpn we are going to be using the terminal, so keep one open at all times during this install. When told to run a command or type into the terminal, type and execute the given command. The terminal can be accessed through the applications menu.
 
 ### Java
 You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is run the following command:
@@ -127,7 +127,7 @@ You need to have Oracle JRE or Oracle OpenJDK installed, to check if it is run t
   cd ~/(location where it was saved (ie. Documents, Downloads, Desktop)) && sudo bash ./snx_install.sh
 ```
 ### cshell
-**Firefox needs to be opened at least once after being installed before we can install cshell, so if you have never opened Firefox after installing it please do now and close it rigth after.**
+**Firefox needs to be opened at least once after being installed before we can install cshell, so if you have never opened Firefox after installing it please do now and close it right after.**
 
 To install it you can run the following command:
 ```
@@ -192,7 +192,7 @@ You can now attempt to access Mooshak:
 * Connecting
   * Open your browser and go to https://vpn.fct.unl.pt/
   * Sign-in using your CLIP credentials
-  * Wait for the popup, or click <kbd>Connect</kbd> to make it open if it doesn't show up on it's own.
+  * Wait for the popup, or click <kbd>Connect</kbd> to make it open if it doesn't show up on its own.
   * Wait for the connection to be established and for Status to change to connected.
 * Disconnecting
   * Either click <kbd>Disconnect</kbd> on the home page (the button that is now where <kbd>Connect</kbd> used to be), or click <kbd>Disconnect</kbd> on the popup. Closing the popup also works.
@@ -205,4 +205,7 @@ cd /usr/bin && sudo ./snx_uninstall && cd ./cshell && sudo bash ./cshell_uninsta
 ```
 
  ## Known issues:
-  * Rebooting on Arch Linux does not start up the cshell process, so that file has to be re-ran.
+  * Rebooting on Arch Linux does not start up the CShell process, so must run as a regular user:
+
+        xhost +"si:localuser:$USER_NAME"
+        /usr/bin/cshell/launcher
